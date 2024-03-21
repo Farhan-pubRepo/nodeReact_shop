@@ -10,7 +10,7 @@ Currently, two official plugins are available:
 # 🛍️ NodeReact_Shop  
 
 **A modern e-commerce platform built with React, Node.js, and MongoDB!**  
-NodeReact_Shop is a full-stack e-commerce application designed to provide a seamless shopping experience. With features like **search**, **pagination**, **add to cart**, **filtering**, **sorting**, and **PayPal checkout**, this app is perfect for both buyers and sellers. Built with **React**, **Node.js**, **Express**, and **MongoDB**, and styled with **TailwindCSS**, it combines performance, usability, and modern design.
+NodeReact_Shop is a full-stack ecommerce application designed to provide a seamless shopping experience. With features like **search**, **pagination**, **add to cart**, **filtering**, **sorting**, and **PayPal checkout**, this app is perfect for both buyers and sellers. Built with **React**, **Node.js**, **Express**, and **MongoDB**, and styled with **TailwindCSS**, it combines performance, usability, and modern design.
 
 ---
 
