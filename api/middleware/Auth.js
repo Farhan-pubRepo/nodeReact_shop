@@ -10,16 +10,18 @@ const protect = asyncHandler(async (req, res, next) => {
   ) {
     try {
       token = req.headers.authorization.split(" ")[1];
-      const decodedToken = jwt.verify(token, process.env.JWT_SECRECT);
+      const decodedToken = jwt.verify(token, process.env.JWT_SECRET);
       req.user = await User.findById(decodedToken.id).select("-password");
       next();
     } catch (err) {
       console.log(err);
+      res.status(401);
+      throw new Error("Not authorized, token verification failed");
     }
   }
   if (!token) {
     res.status(401);
-    throw new Error("Not authorized bro..!");
+    throw new Error("Not authorized, token verification failed");
   }
 });
 
