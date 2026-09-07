@@ -43,7 +43,7 @@ function ProductDetail() {
                   <h2 className="text-sm title-font text-gray-500 tracking-widest">
                     Price : ${product.price}
                   </h2>
-                  <h1 className="text-gray-100 text-3xl title-font font-medium mb-1">
+                  <h1 className="text-gray-900 text-3xl title-font font-medium mb-1">
                     {product.name}
                   </h1>
                   <div className="flex mb-4">
@@ -194,7 +194,7 @@ function ProductDetail() {
                     )}
                   </div>
                   <div className="flex">
-                    <span className="title-font font-medium text-2xl text-gray-100">
+                    <span className="title-font font-medium text-2xl text-gray-900">
                       ${product.price}.00
                     </span>
 

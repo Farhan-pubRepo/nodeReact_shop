@@ -1,3 +1,16 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* The components here are styled light (white nav, white cards, dark text) and
+   only the navbar has dark: variants, so dark mode is half implemented. Without
+   an explicit background, html and body stay transparent and the page adopts the
+   viewer's browser theme, which turned the canvas black while the cards stayed
+   white. Pin the light theme the design actually assumes. */
+:root {
+  color-scheme: light;
+}
+
+body {
+  background-color: #ffffff;
+}
