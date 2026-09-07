@@ -1,5 +1,5 @@
 import { useParams } from "react-router-dom";
-import Layout from "../layouts/Layout";
+import Layout from "../Layouts/Layout";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect, useState } from "react";
 import { productAction } from "../Redux/Actions/Product";

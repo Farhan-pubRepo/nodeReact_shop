@@ -1,6 +1,6 @@
 import  { useState, useEffect } from "react";
 import Confetti from "react-confetti";
-import Layout from "../layouts/Layout";
+import Layout from "../Layouts/Layout";
 import { useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { orderDetailAction } from "../Redux/Actions/Order";

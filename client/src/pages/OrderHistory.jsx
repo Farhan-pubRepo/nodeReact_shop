@@ -1,6 +1,6 @@
 /* eslint-disable no-unused-vars */
 import { useEffect } from "react";
-import Layout from "../layouts/Layout";
+import Layout from "../Layouts/Layout";
 import { useDispatch, useSelector } from "react-redux";
 import { orderListAction } from "../Redux/Actions/Order";
 import moment from "moment";    
