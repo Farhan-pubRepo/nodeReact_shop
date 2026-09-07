@@ -1,8 +1,11 @@
+const path = require("path");
 const express = require("express");
 const app = express();
 const dotenv = require("dotenv");
 const products = require("./data/Products");
-dotenv.config();
+// Resolved against this file, not the working directory, so `npm start` works
+// from the repo root as well as from api/.
+dotenv.config({ path: path.join(__dirname, ".env") });
 const PORT = process.env.PORT;
 const cors = require("cors")
 const mongoose = require("mongoose");
@@ -50,8 +53,16 @@ app.use("/api/config/paypal", (req, res) => {
 
 
 
+// Serve the built client. Registered after the API routes so /api/* still wins,
+// with a fallback to index.html so client-side routes survive a refresh.
+const clientDist = path.join(__dirname, "..", "client", "dist");
+app.use(express.static(clientDist));
+app.get("*", (req, res) => {
+  res.sendFile(path.join(clientDist, "index.html"));
+});
+
 app.listen(PORT || 9000, () => {
-  console.log(`server listening on port ${PORT}`);
+  console.log(`server listening on port ${PORT || 9000}`);
 });
 
 

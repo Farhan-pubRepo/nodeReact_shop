@@ -1,0 +1,27 @@
+# Render blueprint. In the Render dashboard: New > Blueprint, point it at this
+# repo, then fill in the values marked sync:false.
+#
+# The Express API also serves the built React client, so this is one service
+# rather than a separate frontend and backend.
+services:
+  - type: web
+    name: nodereact-shop
+    runtime: node
+    plan: free
+    # NODE_ENV=production makes npm skip devDependencies, but vite and tailwind
+    # live there and the client build needs them, so the build asks for them
+    # explicitly. The running app still gets NODE_ENV=production.
+    buildCommand: npm run build
+    startCommand: npm start
+    healthCheckPath: /
+    envVars:
+      - key: NODE_ENV
+        value: production
+      # Paste your MongoDB Atlas connection string in the dashboard.
+      - key: MONGOOSEDB_RUL
+        sync: false
+      - key: JWT_SECRET
+        generateValue: true
+      # Public by design; the browser receives it to initialise the PayPal SDK.
+      - key: PAYPAL_CLIENT_ID
+        sync: false
